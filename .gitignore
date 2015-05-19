@@ -11,3 +11,5 @@
 
 # Debug files
 *.dSYM/
+
+*.class

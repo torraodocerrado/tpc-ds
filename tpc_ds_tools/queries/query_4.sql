@@ -164,7 +164,7 @@ select top 100 i_item_desc
    and i_category in ('Shoes', 'Music', 'Children')
    and cs_sold_date_sk = d_date_sk
  and d_date between cast('1998-06-21' as date) 
- 				and DATEADD(day, 30, cast('1998-06-21' as date))
+ 				and DATE_ADD(day, 30, cast('1998-06-21' as date))
  group by i_item_id
          ,i_item_desc 
          ,i_category
@@ -209,7 +209,7 @@ select top 100 i_item_id
  and inv_item_sk = i_item_sk
  and d_date_sk=inv_date_sk
  and d_date between cast('1998-07-21' as date) and 
-	DATEADD(day, 60, cast('1998-07-21' as date))
+	DATE_ADD(day, 60, cast('1998-07-21' as date))
  and i_manufact_id in (697,1000,996,809)
  and inv_quantity_on_hand between 100 and 500
  and cs_item_sk = i_item_sk
@@ -256,7 +256,7 @@ where
   	and i_category in ('Sports', 'Music', 'Men')
   	and ws_sold_date_sk = d_date_sk
 	and d_date between cast('2002-02-06' as date) 
-				and DATEADD(day, 30, cast('2002-02-06' as date))
+				and DATE_ADD(day, 30, cast('2002-02-06' as date))
 group by 
 	i_item_id
         ,i_item_desc 
@@ -418,7 +418,7 @@ select top 100 i_item_id
  where i_current_price between 69 and 69+30
  and inv_item_sk = i_item_sk
  and d_date_sk=inv_date_sk
- and d_date between cast('1999-02-05' as date) and DATEADD(day, 60, cast('1999-02-05' as date))
+ and d_date between cast('1999-02-05' as date) and DATE_ADD(day, 60, cast('1999-02-05' as date))
  and i_manufact_id in (579,673,208,436)
  and inv_quantity_on_hand between 100 and 500
  and ss_item_sk = i_item_sk
@@ -607,7 +607,7 @@ where
   	and i_category in ('Home', 'Men', 'Jewelry')
   	and ss_sold_date_sk = d_date_sk
 	and d_date between cast('1998-04-06' as date) 
-				and DATEADD(day, 30, cast('1998-04-06' as date))
+				and DATE_ADD(day, 30, cast('1998-04-06' as date))
 group by 
 	i_item_id
         ,i_item_desc 
@@ -979,8 +979,8 @@ select top 100
  and i_item_sk          = cs_item_sk
  and cs_warehouse_sk    = w_warehouse_sk 
  and cs_sold_date_sk    = d_date_sk
- and d_date between DATEADD(day, -30, cast('1999-02-07' as date))
-				and DATEADD(day, 30, cast('1999-02-07' as date))
+ and d_date between DATE_ADD(day, -30, cast('1999-02-07' as date))
+				and DATE_ADD(day, 30, cast('1999-02-07' as date))
  group by
     w_state,i_item_id
  order by w_state,i_item_id
