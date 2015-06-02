@@ -13,3 +13,4 @@
 *.dSYM/
 
 *.class
+/tpc_ds_tools/build/

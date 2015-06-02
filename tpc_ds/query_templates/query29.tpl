@@ -34,7 +34,7 @@
 -- 
  define YEAR= random(1998,2000, uniform); -- for qualification 1999 
  define MONTH = random(4,4,uniform); -- for qualification 9
- define AGG= text({"sum",1},{"min",1},{"max",1},{"avg",1},{"stddev_samp",1}); -- for qualification sum
+ define AGG= text({"sum",1},{"min",1},{"max",1},{"avg",1},{"stdev",1}); -- for qualification sum
  define _LIMIT=100;
  
  [_LIMITA] select [_LIMITB]  
